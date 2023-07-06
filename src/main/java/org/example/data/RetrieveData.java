@@ -35,7 +35,6 @@ public class RetrieveData {
                 .filter(e -> e.getId() == id)
                 .findFirst()
                 .ifPresent(e -> e.setCount(newCount));
-                //.orElseThrow(() -> new IllegalArgumentException("Unable to find coin with id: " + id));
     }
 
     private void saveAll(List<Coin> coins) {
@@ -49,9 +48,6 @@ public class RetrieveData {
                 .orElseThrow(() -> new IllegalArgumentException("Unable to find coin with value: " + value));
     }
 
-
-
-
     private void init(){
         ObjectMapper objectMapper = new ObjectMapper();
         List<CoinDTO> coinsList;
@@ -60,7 +56,7 @@ public class RetrieveData {
             coinsList = objectMapper.readValue(new File(filePath), new TypeReference<>() {
             });
         } catch (IOException e) {
-            throw new RuntimeException("Błąd podczas wczytywania pliku", e);
+            throw new RuntimeException("Unable to load the file", e);
         }
 
         saveAll(coinsList.stream()
