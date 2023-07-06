@@ -1,4 +1,4 @@
-package org.example;
+package org.example.moneyutil;
 
 import org.example.data.RetrieveData;
 import org.example.model.Coin;
@@ -12,7 +12,6 @@ public class CalculateChange {
     private RetrieveData data = RetrieveData.getInstance();
 
     public List<ChangeDTO> calculate(int value) {
-        System.out.println(data.getAll());
 
         List<Coin> coinsList = data.getAll();
         List<ChangeDTO> returnCoinsList = new ArrayList<>();
@@ -20,14 +19,15 @@ public class CalculateChange {
         for (Coin coin : coinsList){
             if((value / coin.getValue()) >= 1) {
                 int availableAmountCoins = Math.min((value / coin.getValue()), coin.getCount());
+                int newCount = coin.getCount() - availableAmountCoins;
 
-                value = value - availableAmountCoins * coin.getValue();
-                data.updateCount();
-                System.out.println(value);
+                value = value - (availableAmountCoins * coin.getValue());
+                data.updateCount(coin.getId(), newCount);
+
+                returnCoinsList.add(new ChangeDTO(coin.getName(), availableAmountCoins));
             }
         }
 
-        System.out.println(data.getAll());
         return returnCoinsList;
     }
 }

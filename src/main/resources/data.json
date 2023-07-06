@@ -1,0 +1,47 @@
+[
+  {
+    "name": "5 zł",
+    "value": 500,
+    "count": 1
+  },
+  {
+    "name": "2 zł",
+    "value": 200,
+    "count": 3
+  },
+  {
+    "name": "1 zł",
+    "value": 100,
+    "count": 5
+  },
+  {
+    "name": "50 gr",
+    "value": 50,
+    "count": 10
+  },
+  {
+    "name": "20 gr",
+    "value": 20,
+    "count": 20
+  },
+  {
+    "name": "10 gr",
+    "value": 10,
+    "count": 200
+  },
+  {
+    "name": "5 gr",
+    "value": 5,
+    "count": 100
+  },
+  {
+    "name": "2 gr",
+    "value": 2,
+    "count": 100
+  },
+  {
+    "name": "1 gr",
+    "value": 1,
+    "count": 10000
+  }
+]

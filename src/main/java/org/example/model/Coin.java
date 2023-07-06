@@ -1,6 +1,13 @@
-package org.example.domain;
+package org.example.model;
 
-import java.sql.DataTruncation;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
-public record Coin(String name, int value, int count) {
+@Data
+@AllArgsConstructor
+public class Coin {
+    private long id;
+    private String name;
+    private int value;
+    private int count;
 }

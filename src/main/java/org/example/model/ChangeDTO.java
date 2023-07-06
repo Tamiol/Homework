@@ -1,4 +1,4 @@
 package org.example.model;
 
-public record ReturnCoin(String name, int count) {
+public record ChangeDTO(String name, int count) {
 }
